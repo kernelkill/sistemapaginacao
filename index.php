@@ -4,9 +4,7 @@ require("config/config.php");
 require("config/crud.php");
 require("cabecalho.php");
 
-?>
 
-<?php
 
 	@$link = $_GET["link"];
 	$pag[1] = "home.php";
@@ -21,8 +19,6 @@ require("cabecalho.php");
 			include "home.php";
 	}else
 		include "home.php";
-?>
-		
-<?php
+
 require("rodape.php")
 ?>

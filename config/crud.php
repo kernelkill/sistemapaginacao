@@ -8,7 +8,7 @@
 
     function abrirConexao(){
 
-        $conexao = @mysqli_connect(SERVIDOR,USUARIO,PASSWORD,BASE);
+        $conexao = @mysqli_connect(SERVIDOR,USUARIO,SENHA,BANCO);
         @mysqli_set_charset($conexao, CHARSET);
 
         return $conexao;
