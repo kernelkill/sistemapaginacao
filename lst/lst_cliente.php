@@ -3,7 +3,7 @@
 		<div class="base-home">
 			<h1 class="titulo"><span class="cor">Lista de</span> contatos</h1>
 		<div class="base-lista">
-			<span class="qtde"><b>18</b> clientes cadastrados</span>
+			
 			<div class="tabela">	
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				  <thead>
@@ -15,10 +15,16 @@
 					  </tr>
 				  </thead>
 				  <tbody>
+				  <?php
+				  $cliente = consultar("cliente");
+				  if ($cliente) {
+					  foreach($cliente as $linha){
+					  # code...
+				  ?>
 					 <tr class="cor1">
-						<td>Manoel Jailton Nascimento</td>
-						<td>mjailton @gmail.com</td>
-						<td>335550221</td>
+						<td><?php echo $linha["cliente"] ?></td>
+						<td><?php echo $linha["email"] ?></td>
+						<td><?php echo $linha["fone"] ?></td>
 						<td align="center">
 							<a href="index.php?link=2" class="btn">Editar</a>
 						</td>
@@ -26,51 +32,10 @@
 							<a href="index.php?link=2" class="btn excluir">excluir</a>
 						</td>
 					 </tr>	
-				  <tbody>
-					 <tr class="cor2">
-						<td>Manoel Jailton Nascimento</td>
-						<td>mjailton @gmail.com</td>
-						<td>335550221</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn">Editar</a>
-						</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn excluir">excluir</a>
-						</td>
-					 </tr>	
-					 <tr class="cor1">
-						<td>Manoel Jailton Nascimento</td>
-						<td>mjailton @gmail.com</td>
-						<td>335550221</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn">Editar</a>
-						</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn excluir">excluir</a>
-						</td>
-					 </tr>		
-					 <tr class="cor2">
-						<td>Manoel Jailton Nascimento</td>
-						<td>mjailton @gmail.com</td>
-						<td>335550221</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn">Editar</a>
-						</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn excluir">excluir</a>
-						</td>
-					 </tr>
-					 <tr class="cor1">
-						<td>Manoel Jailton Nascimento</td>
-						<td>mjailton @gmail.com</td>
-						<td>335550221</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn">Editar</a>
-						</td>
-						<td align="center">
-							<a href="index.php?link=2" class="btn excluir">excluir</a>
-						</td>
-					 </tr>										  
+					<?php
+					  }}else {
+						  echo '<span class="qtde"><b>Não existe</b> nenhum cliente cadastrado!!<span>';
+					  } ?>		  
 				  </tbody>
 				</table>
 		</div>	

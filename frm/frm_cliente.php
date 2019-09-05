@@ -17,17 +17,17 @@
 				
 				<div class="col">
 					<label>Bairro</label>
-					<input name="txt_fone" value="" type="text" placeholder="Insira seu bairro">
+					<input name="txt_bairro" value="" type="text" placeholder="Insira seu bairro">
 				</div>
 
 				<div class="col">
 					<label>CEP</label>
-					<input name="txt_fone" value="" type="text" placeholder="Insira seu CEP">
+					<input name="txt_cep" value="" type="text" placeholder="Insira seu CEP">
 				</div>	
 				
 				<div class="col">
 					<label>CPF</label>
-					<input name="txt_fone" value="" type="text" placeholder="Insira seu CPF">
+					<input name="txt_cpf" value="" type="text" placeholder="Insira seu CPF">
 				</div>
 				
 				<input type="hidden" name="acao" value="Cadastrar">
