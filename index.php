@@ -1,6 +1,7 @@
 
 <?php
-require("cabecalho.php")
+require("config/config.php");
+require("cabecalho.php");
 
 ?>
 		
