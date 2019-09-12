@@ -3,7 +3,7 @@
 		<div class="base-home">
 			<h1 class="titulo"><span class="cor">Novo</span> cadastro</h1>
 		<div class="base-formulario">	
-			<form action="#" method="POST">
+			<form action="../op/op_cliente.php" method="POST">
 				<label>Nome</label>
 					<input name="txt_nome" value="" type="text" placeholder="Insira umm nome">
 				<label>Email</label>
