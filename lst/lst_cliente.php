@@ -16,20 +16,20 @@
 				  </thead>
 				  <tbody>
 				  <?php
-				  $cliente = consultar("cliente");
-				  if ($cliente) {
-					  foreach($cliente as $linha){
+				  $clientes = consultar("cliente");
+				  if ($clientes) {
+					  foreach($clientes as $cliente){
 					  # code...
 				  ?>
 					 <tr class="cor1">
-						<td><?php echo $linha["cliente"] ?></td>
-						<td><?php echo $linha["email"] ?></td>
-						<td><?php echo $linha["fone"] ?></td>
+						<td><?php echo $cliente["cliente"] ?></td>
+						<td><?php echo $cliente["email"] ?></td>
+						<td><?php echo $cliente["fone"] ?></td>
 						<td align="center">
-							<a href="index.php?link=2" class="btn">Editar</a>
+							<a href="index.php?link=2&id=<?php echo $cliente["id_clinte"]?>&acao=Editar" class="btn">editar</a>
 						</td>
 						<td align="center">
-							<a href="index.php?link=2" class="btn excluir">excluir</a>
+							<a href="index.php?link=2&id=<?php echo $cliente["id_clinte"]?>&acao=Excluir" class="btn excluir">excluir</a>
 						</td>
 					 </tr>	
 					<?php
