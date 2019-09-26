@@ -10,6 +10,9 @@
  require("../config/crud.php");
 
 
+ $acao      = $_POST["acao"];
+ $id        = $_POST["id"];
+
  $cliente   = strip_tags($_POST["txt_nome"]);
  $email     = strip_tags($_POST["txt_email"]);
  $endereco  = strip_tags($_POST["txt_endereco"]);
@@ -27,6 +30,18 @@ $dados = array(
     "cep"       => $cep   
 );
 
+if ($acao=="Cadastrar") {
+    # code...
+    inserir("cliente", $dados);
+}
+if ($acao=="Editar") {
+    # code...
+    alterar("cliente", $dados, "id_clinte = $id");
+}
+if ($acao=="Excluir") {
+    # code...
+    deletar("cliente","id_clinte = $id");
+}
 
 inserir("cliente",$dados);
 

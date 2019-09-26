@@ -44,10 +44,10 @@
 				</div>
 				
 				<div class="col">
-				<input type="hidden" name="acao" value="Cadastrar">
-				<input type="hidden" name="id" value="">
-				<input type="submit" value="Cadastrar" class="btn">
-				<input type="reset" name="Reset" id="button" value="Limpar" class="btn limpar">
+				<input type="hidden" name="acao" value="<?php echo $acao?>">
+				<input type="hidden" name="id" value="<?php echo $id?>">
+				<input type="submit" value="<?php echo $acao?>" class="btn">
+				
 				</div>
 			</form>
 		</div>	
