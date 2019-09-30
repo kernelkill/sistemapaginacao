@@ -115,3 +115,9 @@
         fecharConexao($link);
         return $data;
     }
+
+    function total($sql){
+        $qry = executar($sql);
+        return mysqli_num_rows($qry);
+
+    }

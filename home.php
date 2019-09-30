@@ -11,12 +11,12 @@
 				<span><b>lista de</b> contatos</span>
 			</a>
 			
-			<a href="index.php?link=2" class="col">
+			<a href="index.php?link=3" class="col">
 				<i class="icone ico3"></i>
 				<span><b>Editar</b> contatos</span>
 			</a>
 			
-			<a href="index.php?link=2" class="col">
+			<a href="index.php?link=3" class="col">
 				<i class="icone ico4"></i>
 				<span><b>Excluir</b> contatos</span>
 			</a>

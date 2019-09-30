@@ -1,9 +1,47 @@
+<?php 
+	$pesq		= isset($_GET["pesq"]) ? $_GET["pesq"]: NULL;
+	$campo		= isset($_GET["campo"]) ? $_GET["campo"]: NULL; 
+
+
+	if ($pesq) {
+		# code...
+		@$sql = "SELECT * FROM cliente WHERE $campo like '%$pesq%' ";
+	}else {
+		# code...
+		@$sql = " SELECT * FROM cliente ";
+	}
+
+	$clientes = selecionar($sql);
+
+	$total = total($sql);
+	$lpp = 5;
+	$paginas = ceil($total / $lpp);
+?>
+
 
 		
-		<div class="base-home">
+<div class="base-home">
 			<h1 class="titulo"><span class="cor">Lista de</span> contatos</h1>
+	<div class="base-lista">
 		<div class="base-lista">
-			
+			<form action="<?php echo URL_BASE ."index.php" ?>" method="get">
+				<div class="col">
+					<span>Valor</span>
+					<input type="text" name="pesq" value="<?php echo $pesq ?>" >
+				</div>
+				<div class="col">
+					<span>Campo</span>
+					<select name="campo">
+						<option value="cliente">Nome</option>
+						<option value="email">Email</option>
+					</select>
+				</div>
+				<div class="col">
+				<input type="submit" value="Buscar" class="btn">
+			</div>
+			</form>
+		</div>
+		<span class="qtde"><b><?php echo $total ?></b> Cliente Cadastrados</span>
 			<div class="tabela">	
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				  <thead>
