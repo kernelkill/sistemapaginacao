@@ -1,6 +1,6 @@
 <?php
 
-	$acao	= isset($_GET["acao"]) ? $_GET["acao"]: "Cadastrar";
+	$acao	= isset($_GET["acao"]) ? $_GET["acao"]: 'Cadastrar';
 	$id		= isset($_GET["id"]) ? $_GET["id"]: NULL;
 
 
@@ -23,14 +23,14 @@
 		<div class="base-formulario">	
 			<form action="op/op_cliente.php" method="POST">
 				<label>Nome</label>
-					<input name="txt_nome" value="<?php echo $nome ?>" type="text" placeholder="Insira umm nome">
+					<input name="txt_nome" value="<?php echo $nome ?>" type="text" placeholder="Insira umm nome" required=>
 				<label>Email</label>
-					<input name="txt_email" value="<?php echo $email ?>" type="text" placeholder="Insira um email">
+					<input name="txt_email" value="<?php echo $email ?>" type="text" placeholder="Insira um email" required=>
 				<label>Endereço</label>
 					<input name="txt_endereco" value="<?php echo $endereco ?>" type="text" placeholder="Insira seu endereço">	
 				<div class="col">
 					<label>Telefone</label>
-					<input name="txt_fone" value="<?php echo $fone ?>" type="text" placeholder="Insira seu telefone">
+					<input name="txt_fone" value="<?php echo $fone ?>" type="text" placeholder="Insira seu telefone" required=>
 				</div>	
 				
 				<div class="col">
@@ -40,7 +40,7 @@
 
 				<div class="col">
 					<label>CEP</label>
-					<input name="txt_cep" value="<?php echo $cep ?>" type="text" placeholder="Insira seu CEP">
+					<input name="txt_cep" value="<?php echo $cep ?>" type="text" placeholder="Insira seu CEP" required=>
 				</div>
 				
 				<div class="col">

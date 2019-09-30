@@ -30,20 +30,20 @@ $dados = array(
     "cep"       => $cep   
 );
 
-if ($acao=="Cadastrar") {
+if ($acao === "Cadastrar") {
     # code...
-    inserir("cliente", $dados);
+    inserir("cliente",$dados);
 }
-if ($acao=="Editar") {
+if ($acao === "Editar") {
     # code...
     alterar("cliente", $dados, "id_clinte = $id");
 }
-if ($acao=="Excluir") {
+if ($acao === "Excluir") {
     # code...
     deletar("cliente","id_clinte = $id");
 }
 
-inserir("cliente",$dados);
+
 
 header("location:". URL_BASE ."index.php?link=3");
 
