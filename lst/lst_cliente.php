@@ -30,6 +30,21 @@
 			<li><a href='index.php?link=3&pg=$paginas' class='prox'>Ultimo</a></li>
 		";
 	}
+
+	if ($pg > 0) {
+		# code...
+		$mais = $pg +1;
+		$url_mais = "index.php?link=3&pg=$mais";
+		$menos = $pg -1;
+		$url_menos = "index.php?link=3&pg=$menos";
+		$imprimePaginacao = "
+
+			<li><a href='index.php?link=3&pg=0' class='prox'>Primeiro</a></li>
+			<li><a href='$url_menos' class='ant'>Anterior</a></li>
+			<li><a href='$url_mais' class='prox'>Próximo</a></li>
+			<li><a href='index.php?link=3&pg=$paginas' class='prox'>Ultimo</a></li>
+		";
+	}
 ?>
 
 
