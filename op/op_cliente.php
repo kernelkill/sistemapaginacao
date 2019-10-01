@@ -36,11 +36,11 @@ if ($acao === "Cadastrar") {
 }
 if ($acao === "Editar") {
     # code...
-    alterar("cliente", $dados, "id_clinte = $id");
+    alterar("cliente", $dados, "id_cliente = $id");
 }
 if ($acao === "Excluir") {
     # code...
-    deletar("cliente","id_clinte = $id");
+    deletar("cliente","id_cliente = $id");
 }
 
 

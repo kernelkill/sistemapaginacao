@@ -15,12 +15,21 @@
 
 	$clientes = selecionar($sql);
 
-	$total = total($sql);
-	$lpp = 5;
-	$paginas = ceil($total / $lpp);
-	$inicio = $pg * $lpp;
+	$total 				= total($sql);
+	$lpp 				= 5;
+	$paginas 			= ceil($total / $lpp -1);
+	$total_paginas		= ceil($total / $lpp);
+	$inicio 			= $pg * $lpp;
 
-	
+	if ($pg == 0) {
+		# code...
+		$mais = $pg +1;
+		$url_mais = "index.php?link=3&pg=$mais";
+		$imprimePaginacao = "
+			<li><a href='$url_mais' class='prox'>Próximo</a></li>
+			<li><a href='index.php?link=3&pg=$paginas' class='prox'>Ultimo</a></li>
+		";
+	}
 ?>
 
 
@@ -90,14 +99,9 @@
 		</div>	
 				
 				<ul class="paginacao">
-					<li><a href="#" class="ant">Anterior</a></li>
-					<li class="ativo">1</li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">...</a></li>
-					<li><a href="#" class="prox">Próximo</a></li>
+
+				<?php echo $imprimePaginacao ?>
+
 				</ul>
 		</div>	
 </div>	
