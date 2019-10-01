@@ -2,7 +2,13 @@
 
 	$acao	= isset($_GET["acao"]) ? $_GET["acao"]: 'Cadastrar';
 	$id		= isset($_GET["id"]) ? $_GET["id"]: NULL;
+	$pesq	= isset($_GET["pesq"]) ? $_GET["pesq"]: NULL;
+	$campo	= isset($_GET["campo"])? $_GET["campo"]:NULL;
 
+	if ($pesq) {
+		# code...
+		$sql = "SELECT * FROM cliente WHERE $campo like '%pesq%' ";
+	}
 
 	if ($id) {
 		# code...
@@ -52,4 +58,3 @@
 			</form>
 		</div>	
 </div>	
-		

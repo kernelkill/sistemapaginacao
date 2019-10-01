@@ -45,6 +45,22 @@
 			<li><a href='index.php?link=3&pg=$paginas' class='prox'>Ultimo</a></li>
 		";
 	}
+
+	if ($pg == $paginas) {
+		# code...
+		$menos = $pg -1;
+		$url_menos = "index.php?link=3&pg=$menos";
+		$imprimePaginacao = "
+
+			<li><a href='index.php?link=3&pg=0' class='prox'>Primeiro</a></li>
+			<li><a href='$url_menos' class='ant'>Anterior</a></li>
+		";
+	}
+
+	if ($paginas <= 0) {
+		# code...
+		$imprimePaginacao = "Página 1 de 1";
+	}
 ?>
 
 
