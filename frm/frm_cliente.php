@@ -6,7 +6,7 @@
 
 	if ($id) {
 		# code...
-		$valores = consultar("cliente", "id_clinte = $id");
+		$valores = consultar("cliente", "id_cliente = $id");
 	}
 
 	$nome 		= isset($valores[0]["cliente"]) ? $valores[0]["cliente"] : NULL;

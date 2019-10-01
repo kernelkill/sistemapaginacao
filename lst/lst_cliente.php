@@ -1,4 +1,6 @@
 <?php 
+
+	$pg			= isset($_GET["pg"]) ? $_GET["pg"]: NULL;
 	$pesq		= isset($_GET["pesq"]) ? $_GET["pesq"]: NULL;
 	$campo		= isset($_GET["campo"]) ? $_GET["campo"]: NULL; 
 
@@ -16,6 +18,9 @@
 	$total = total($sql);
 	$lpp = 5;
 	$paginas = ceil($total / $lpp);
+	$inicio = $pg * $lpp;
+
+	
 ?>
 
 
@@ -46,6 +51,7 @@
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				  <thead>
 					   <tr>
+						<th width="5%" align="left">ID</th>
 						<th width="25%" align="left">Nome</th>
 						<th width="25%" align="left">Email</th>
 						<th width="10%" align="left">Telefone</th>
@@ -54,20 +60,25 @@
 				  </thead>
 				  <tbody>
 				  <?php
+
+					echo "SELECT * FROM cliente LIMIT $inicio, $lpp";	
+
 				  $clientes = consultar("cliente");
+				  $clientes = selecionar($sql ." LIMIT $inicio, $lpp");
 				  if ($clientes) {
 					  foreach($clientes as $cliente){
 					  # code...
 				  ?>
 					 <tr class="cor1">
+						<td><?php echo $cliente["id_cliente"] ?></td>
 						<td><?php echo $cliente["cliente"] ?></td>
 						<td><?php echo $cliente["email"] ?></td>
 						<td><?php echo $cliente["fone"] ?></td>
 						<td align="center">
-							<a href="index.php?link=2&id=<?php echo $cliente["id_clinte"]?>&acao=Editar" class="btn">editar</a>
+							<a href="index.php?link=2&id=<?php echo $cliente["id_cliente"]?>&acao=Editar" class="btn">editar</a>
 						</td>
 						<td align="center">
-							<a href="index.php?link=2&id=<?php echo $cliente["id_clinte"]?>&acao=Excluir" class="btn excluir">excluir</a>
+							<a href="index.php?link=2&id=<?php echo $cliente["id_cliente"]?>&acao=Excluir" class="btn excluir">excluir</a>
 						</td>
 					 </tr>	
 					<?php
