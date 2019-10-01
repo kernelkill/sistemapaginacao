@@ -61,7 +61,7 @@
             while ($linha = @mysqli_fetch_assoc($qry)){
                 $dados[] = $linha;
             }
-            return $dados;
+            return @$dados;
         }
     }
 
